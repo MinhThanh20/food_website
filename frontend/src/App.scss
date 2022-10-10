@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito&family=Nunito+Sans&family=Poppins:wght@100;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito&family=Nunito+Sans&family=Poppins:wght@100;300;400;500;600&family=Satisfy&display=swap");
+$green--: #27ae60;
+$black--: #130f40;
+$white--: #fff;
+$light-color--: #666;
+$light-bg--: #f7f7f7;
+$border--: 0.1rem solid rgba(0, 0, 0, 0.1);
+$box-shadow--: 0 1rem rgba(0, 0, 0, 0.05);
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: white;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $green--;
+  }
+}
+html {
+  font-size: 62.5%;
+}
+@media only screen and (min-width: 300px) and (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+  .cart-total {
+    .box {
+      text-align: center;
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+  .header {
+    padding: 2rem;
+  }
+}

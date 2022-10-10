@@ -1,0 +1,32 @@
+$green--: #27ae60;
+$black--: #130f40;
+$white--: #fff;
+$light-color--: #666;
+$light-bg--: #f7f7f7;
+$border--: 0.1rem solid rgba(0, 0, 0, 0.1);
+$box-shadow--: 0 1rem rgba(0, 0, 0, 0.05);
+.Slider {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.category {
+  .box {
+    padding: 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    background: $light-bg--;
+    height: 15rem;
+    margin: 2rem;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &:hover {
+      background: $green--;
+
+      h3 {
+        color: $white--;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const morgan = require("morgan");
+const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
+const port = process.env.URL || 4000;
+const productRoute = require("./routes/Products");
+const cartRouter = require("./routes/Cart");
+const authRouter = require("./routes/Auth");
+const userRouter = require("./routes/User");
+const orderRouter = require("./routes/Oder");
+dotenv.config();
+mongoose.connect(process.env.URL, { useNewUrlParser: true });
+const conn = mongoose.connection;
+conn.on("connected", function () {
+  console.log("database is connected successfully");
+});
+app.use(morgan("combined"));
+app.use(cors());
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded());
+app.use("/v1/products", productRoute);
+app.use("/v1/cart", cartRouter);
+app.use("/v1/auth", authRouter);
+app.use("/v1/user", userRouter);
+app.use("/v1/order", orderRouter);
+app.listen(port, () => {
+  console.log(`Sever running with ${port}`);
+});

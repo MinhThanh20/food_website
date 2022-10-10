@@ -1,0 +1,110 @@
+$green--: #27ae60;
+$black--: #130f40;
+$white--: #fff;
+$light-color--: #666;
+$light-bg--: #f7f7f7;
+$border--: 0.1rem solid rgba(0, 0, 0, 0.1);
+$box-shadow--: 0 1rem rgba(0, 0, 0, 0.05);
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
+}
+@mixin font($size) {
+  font-family: "Satisfy", cursive;
+  font-size: $size;
+  color: $green--;
+}
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: $white--;
+  box-shadow: $box-shadow--;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: black;
+    i {
+      color: $green--;
+    }
+  }
+  .navbar {
+    a {
+      font-size: 1.7rem;
+      margin: 0 1rem;
+      color: $light-color--;
+      &:hover {
+        color: $green--;
+      }
+    }
+  }
+  .icons div {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    background-color: $light-bg--;
+    color: $black--;
+    border-radius: 0.5rem;
+    margin-left: 0.3rem;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+      color: $white--;
+      background-color: $green--;
+    }
+  }
+}
+#menu-btn {
+  display: none;
+}
+@keyframes FadeUp {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+section {
+  padding: 2rem 9%;
+}
+.search-form-container {
+  display: none;
+  position: fixed;
+  top: 8.5rem;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 8.5rem);
+  background-color: $white--;
+
+  &.active {
+    display: block;
+  }
+  form {
+    height: 7rem;
+    border-bottom: 0.2rem solid $black--;
+    display: flex;
+    align-items: center;
+    animation: FadeUp 0.4s linear;
+    input {
+      width: 100%;
+      height: 100%;
+      font-size: 1.7rem;
+      color: $black--;
+      text-transform: none;
+      padding-right: 1rem;
+    }
+    label {
+      font-size: 3rem;
+      cursor: pointer;
+      color: $black--;
+      &:hover {
+        color: $green--;
+      }
+    }
+  }
+}

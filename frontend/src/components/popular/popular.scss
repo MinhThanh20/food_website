@@ -1,0 +1,111 @@
+$green--: #27ae60;
+$black--: #130f40;
+$white--: #fff;
+$light-color--: #666;
+$light-bg--: #f7f7f7;
+$border--: 0.1rem solid rgba(0, 0, 0, 0.1);
+$box-shadow--: 0 1rem rgba(0, 0, 0, 0.05);
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
+}
+@mixin font($size) {
+  font-family: "Satisfy", cursive;
+  font-size: $size;
+  color: $green--;
+}
+.popular {
+  .heading {
+    span {
+      text-align: center;
+      color: $green--;
+      font-size: 3rem;
+      display: block;
+      font-family: "Satisfy", cursive;
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 4rem;
+      text-align: center;
+      padding-bottom: 0.8rem;
+    }
+    width: 100%;
+  }
+  .box-container {
+    @include grid(25rem);
+
+    .box {
+      border-radius: 0.5rem;
+      position: relative;
+      background: $light-bg--;
+      padding: 2rem;
+      text-align: center;
+
+      .fa-heart {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2.5rem;
+        color: $light-color--;
+        cursor: pointer;
+
+        &:hover {
+          color: $green--;
+        }
+      }
+
+      .image {
+        margin: 1rem 0;
+
+        img {
+          height: 15rem;
+        }
+      }
+
+      .content {
+        .btn {
+          display: inline-block;
+          margin-top: 1rem;
+          padding: 0.7rem 1.8rem;
+          font-size: 1.7rem;
+          cursor: pointer;
+          color: #fff;
+          background: #27ae60;
+          border-radius: 0.5rem;
+          &:hover {
+            background-color: $black--;
+          }
+        }
+        h3 {
+          font-size: 2rem;
+          color: $black--;
+        }
+
+        .stars {
+          padding: 1rem 0;
+          font-size: 1.7rem;
+
+          i {
+            color: gold;
+          }
+
+          span {
+            color: $light-color--;
+          }
+        }
+
+        .price {
+          font-size: 2rem;
+          color: $black--;
+
+          span {
+            font-size: 1.5rem;
+            color: $light-color--;
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+}
